@@ -1,104 +1,164 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-            <title>Kuba Holak | personal website</title>
-            <meta content="width=device-width, initial-scale=1" name="viewport">
-                <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
-                    <style type="text/css">
-                        body,
-                        html {
-                            margin: 0;
-                            padding: 0;
-                            width: 100%;
-                            height: 100%;
-                            font-family: 'Share Tech Mono', monospace;
-                        }
-                        body {
-                            position: relative;
-                            
-                            width: 100%;
-                            height: 100%;
-                            backgriund-color: #fff;
-                            color: rgb(255, 32, 110);
-                            font-size: 12px;
-                        }
-                        .wrapper {
-                            width: 960px;
-                            max-width: 80vw;
-                            margin: 0 auto;
-                            position: relative;
-                            z-index: 1000;
-                            min-height: 100vh;
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                        }
-                        .desc {
-                            max-width: 600px;
-                        }
-                        h1 {
-                            font-size: 3rem;
-                        }
-                        h2 {
-                            font-size: 1.8rem;
-                        }
-                        h3 {
-                            font-size: 1.5rem;
-                        }
-                        h4 {
-                            font-size: 1rem;
-                        }
-                        h1,
-                        h2,
-                        h3,
-                        h4 {
-                            margin: 0.5rem 0 0;
-                            line-height: 1.4em;
-                        }
-                        a {
-                            color: inherit;
-                            display: inline;
-                            border-bottom: 1px dotted rgb(255, 32, 110);
-                            text-decoration: none;
-                        }
-                        a:hover{
-                            border-bottom-style: dashed;
-                        }
-                        @media (min-width:960px) {
-                            body {
-                                font-size: 16px;
-                            }
-                            h1 {
-                                font-size: 4rem;
-                            }
-                            h2 {
-                                font-size: 2rem;
-                            }
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div class="wrapper">
-                        <article>
-                            <div class="desc">
-                                <h1>Hi, I am
-                                    <a href="https://twitter.com/@kubaholak" target="_blank">Kuba Holak</a>
-                                </h1>
-                                <h2>I am product and engineering manager with solid 
-                                    <a href="https://github.com/khola" target="_blank">software engineering</a> background, currently leading development of Cloud Managment Platform at
-                                    <a href="https://www.nordcloud.com/" target="_blank">Nordcloud</a>. Interested in all things DevOps and FinOps.
-                                </h2>
-                               
-                                <h4>More about me? Father and husband.
-                                    <a href="https://www.strava.com/athletes/20392808" target="_blank">Running</a>
-                                    and sometimes Yoga. Geek &amp; bike commuter. I used to play in a
-                                    <a href="https://www.youtube.com/watch?v=KZ1bsyCVPzY" target="_blank">band</a>, I still
-                                    <a href="https://soundcloud.com/holism" target="_blank">make music</a>
-                                    in my free time.</h3>
-                            </div>
-                        </article>
-                    </div>
-                </body>
-            </html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Jakub Holak - Engineering Leader | Scaling teams, building software, and writing JavaScript.">
+    <meta name="keywords" content="Jakub Holak, Engineering Leader, Software Development, JavaScript, Cloud, Tech">
+    <meta name="author" content="Jakub Holak">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Jakub Holak - Engineering Leader">
+    <meta property="og:description" content="Scaling teams, building software, and writing way too much JavaScript since before it was cool.">
+    <meta property="og:image" content="https://yourdomain.com/preview-image.jpg">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jakub Holak - Engineering Leader">
+    <meta name="twitter:description" content="Scaling teams, building software, and writing JavaScript.">
+    <meta name="twitter:image" content="https://yourdomain.com/preview-image.jpg">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-light: linear-gradient(to bottom, #ffffff, #dedede);
+            --bg-dark: linear-gradient(to bottom, #1e1e1e, #333);
+            --text-light: #333;
+            --text-dark: #f8f8f8;
+            --link-light: #fff;
+            --link-dark: #f8f8f8;
+            --link-hover-light: #555;
+            --link-hover-dark: #bbb;
+        }
+
+        body {
+            font-family: "Inconsolata", monospace;
+            margin: 0;
+            padding: 0;
+            background: var(--bg-light);
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
         
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: var(--bg-dark);
+                color: var(--text-dark);
+            }
+            a {
+                color: var(--link-dark);
+            }
+            a:hover {
+                color: var(--link-hover-dark);
+            }
+        }
+        
+        .container {
+            max-width: 600px;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease-out forwards;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .text-content {
+            flex: 1;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1, h2, p, .social-links {
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            animation-delay: 0.2s;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: #666;
+            animation-delay: 0.4s;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-top: 20px;
+            animation-delay: 0.6s;
+        }
+        a {
+            color: var(--link-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: var(--link-hover-light);
+        }
+       
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeInScale 1s ease-out forwards;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex-shrink: 0;
+            margin-bottom: 0;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="pic.png" alt="Jakub Holak" class="profile-pic">
+        <div class="text-content">
+            <h1>Jakub Holak</h1>
+            <h2>Engineering Leader | Nerdy but creative</h2>
+            <p>Scaling teams, building software, and writing way too much JavaScript since before it was cool. A systems thinker focused on making engineering teams faster, happier, and more productive.</p>
+            <p>Get in touch - <a href="mailto:jakub.holak@gmail.com">jakub.holak@gmail.com</a></p>
+        </div>
+    </div>
+    
+</body>
+</html>
